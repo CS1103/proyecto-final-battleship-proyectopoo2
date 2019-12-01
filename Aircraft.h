@@ -1,9 +1,10 @@
 //
-// Created by Juan Galvez on 2019-11-30.
+// Created by Juan Galvez on 2019-12-01.
 //
 
-#ifndef PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_SUBMARINE_H
-#define PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_SUBMARINE_H
+#ifndef PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_AIRCRAFT_H
+#define PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_AIRCRAFT_H
+
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -12,8 +13,7 @@
 #include <iomanip>
 
 using namespace std;
-
-class Submarine {
+class Aircraft {
 private:
     string name;
     int length;
@@ -21,15 +21,15 @@ private:
     int columnPosition;
     bool amIHorizontal;
     char boardCharacter;
+
 public:
-    Submarine(){
-        name = "Submarine";
-        length = 3;
-        boardCharacter = 'S';
+    Aircraft(){
+        name = "Aircraft";
+        length = 4;
+        boardCharacter = 'A';
     }
 
-    void Anadir_Piezas(int row, int column, char direction)
-    {
+    void Anadir_Piezas(int row, int column, char direction){
         if(direction == 'u')
         {
             rowPosition = row-(length-1);
@@ -61,34 +61,29 @@ public:
         }
     }
 
-    bool isHorizontal() const
-    {
+    bool isHorizontal() const{
         return amIHorizontal;
     }
 
-    int getTopLeftRow() const
-    {
+    int getTopLeftRow() const{
         return rowPosition;
     }
 
-    int getTopLeftColumn() const
-    {
+    int getTopLeftColumn() const{
         return columnPosition;
     }
 
-    int getLength() const
-    {
+    int getLength() const{
         return length;
     }
 
-    string getName() const
-    {
+    string getName() const{
         return name;
     }
 
-    char getBoardCharacter() const
-    {
+    char getBoardCharacter() const{
         return boardCharacter;
     }
 };
-#endif //PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_SUBMARINE_H
+
+#endif //PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_AIRCRAFT_H

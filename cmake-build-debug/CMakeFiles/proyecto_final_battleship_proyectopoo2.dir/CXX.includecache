@@ -6,7 +6,67 @@
 
 #IncludeRegexTransform: 
 
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Aircraft.h
+iostream
+-
+fstream
+-
+cstdlib
+-
+ctime
+-
+string
+-
+iomanip
+-
+
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Battleship.h
+iostream
+-
+fstream
+-
+cstdlib
+-
+ctime
+-
+string
+-
+iomanip
+-
+Aircraft.h
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Aircraft.h
+
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Submarine.h
+iostream
+-
+fstream
+-
+cstdlib
+-
+ctime
+-
+string
+-
+iomanip
+-
+
 /Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/main.cpp
 iostream
 -
+fstream
+-
+cstdlib
+-
+ctime
+-
+string
+-
+iomanip
+-
+Submarine.h
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Submarine.h
+Battleship.h
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Battleship.h
+Aircraft.h
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Aircraft.h
 

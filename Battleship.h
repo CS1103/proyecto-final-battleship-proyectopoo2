@@ -11,6 +11,7 @@
 #include <string>
 #include <iomanip>
 #include "Aircraft.h"
+
 using namespace std;
 const int SIZE = 10; // tamaño tablero
 const char HIT = 'X'; // Daño
@@ -43,7 +44,7 @@ public:
     void Anadir_Piezas_Jugador(){
         bool correctPlacement;
         do{
-            displayBoards();
+            Mostrar_Tablero();
             correctPlacement = Poner_Pieza_Posicion(playerSub);
             if(!correctPlacement)
             {
@@ -51,7 +52,7 @@ public:
             }
         }while(!correctPlacement);
 
-        addPieceToBoard(playerBoard, playerSub);
+        Anadir_Pieza_Tablero(playerBoard, playerSub);
     }
 
     void Anadir_Piezas_PC(string s){
@@ -119,23 +120,22 @@ public:
 
 
             computerSub.Anadir_Piezas(randomRow, randomColumn, getFirstChar(randomDirection));
-            correctPlacement = isValidPlacement(tempBoard, computerSub);
+            correctPlacement = Posicion_valida(tempBoard, computerSub);
         }while(!correctPlacement);
 
-        addPieceToBoard(tempBoard, computerSub);
+        Anadir_Pieza_Tablero(tempBoard, computerSub);
         in.close();
     }
 
-    string playerMove(){
+    string Movimiento(){
         int attackRow;
         int attackColumn;
         string coordinate;
 
-        do
-        {
+        do{
             cout << "¿Dónde te gustaria atacar?";
             coordinate = toLower(requeststring());
-            attackRow = rowCharToInt(getFirstChar(coordinate));
+            attackRow = Fila_char_int(getFirstChar(coordinate));
             attackColumn = getFirstInt(coordinate)-1;
         }while( (attackRow < 0 || attackRow > SIZE-1) || (attackColumn < 0 || attackColumn > SIZE-1));
 
@@ -146,10 +146,10 @@ public:
             if(row == attackRow && column == attackColumn)
             {
                 computerBoard[attackRow][attackColumn] = HIT;
-                if(isSunk(computerBoard,computerSub))
+                if(Esta_hundido(computerBoard,computerSub))
                 {
                     string result = computerSub.getName();
-                    result +=" Submarino Hundido En:  ";
+                    result +=" Hundido En: ";
                     result +=toupper(getFirstChar(coordinate));
                     result +=('0'+getFirstInt(coordinate));
                     return result;
@@ -171,13 +171,13 @@ public:
         }
 
         computerBoard[attackRow][attackColumn] = MISS;
-        string result = "Fallo en:  ";
+        string result = "Fallo en: ";
         result +=toupper(getFirstChar(coordinate));
         result +=('0' + getFirstInt(coordinate));
         return result;
     }
 
-    string computerMove(){
+    string Movimiento_PC(){
         int attackRow = rand()%SIZE;
         int attackColumn = rand()%SIZE;
 
@@ -192,7 +192,7 @@ public:
             if(row == attackRow && column == attackColumn)
             {
                 playerBoard[attackRow][attackColumn] = HIT;
-                if(isSunk(playerBoard,playerSub))
+                if(Esta_hundido(playerBoard,playerSub))
                 {
                     string result = playerSub.getName();
                     result += "Submarino Hundido En:";
@@ -221,7 +221,7 @@ public:
         return result;
     }
 
-    int gameOver(){
+    int Juego_Terminado(){
         int result = 0;
 
         int computerShipCoordinateTotal = 0;
@@ -232,8 +232,7 @@ public:
 
 
         int playerBoardHitTotal = 0;
-        for(int i=0; i<SIZE; i++)
-        {
+        for(int i=0; i<SIZE; i++){
             for(int j=0; j<SIZE; j++)
             {
                 if(playerBoard[i][j] == HIT)
@@ -242,14 +241,12 @@ public:
                 }
             }
         }
-        if(playerBoardHitTotal == playerShipCoordinateTotal)
-        {
+        if(playerBoardHitTotal == playerShipCoordinateTotal){
             result+=1;
         }
 
         int computerBoardHitTotal = 0;
-        for(int i=0; i<SIZE; i++)
-        {
+        for(int i=0; i<SIZE; i++){
             for(int j=0; j<SIZE; j++)
             {
                 if(computerBoard[i][j] == HIT)
@@ -266,16 +263,16 @@ public:
         return result;
     }
 
-    void displayBoards(){
-        displayBoards("", "", playerBoard, computerBoard);
+    void Mostrar_Tablero(){
+        Mostrar_Tablero("", "", playerBoard, computerBoard);
     }
 
-    void displayBoards(string &move1, string &move2){
-        displayBoards(move1, move2, playerBoard, computerBoard);
+    void Mostrar_Tablero(string &move1, string &move2){
+        Mostrar_Tablero(move1, move2, playerBoard, computerBoard);
     }
 
 
-    void displayBoards(const string & move1, const string & move2, char leftBoard[SIZE][SIZE], char rightBoard[SIZE][SIZE]){
+    void Mostrar_Tablero(const string & move1, const string & move2, char leftBoard[SIZE][SIZE], char rightBoard[SIZE][SIZE]){
 
         cout << "  ";
         for(int i = 0; i < SIZE; i++)
@@ -319,8 +316,7 @@ public:
         }
     }
 
-    int rowCharToInt(char c){
-        // (int)'a' = 97
+    int Fila_char_int(char c){
         return c - 'a';
     }
 
@@ -330,23 +326,21 @@ private:
     char computerBoard[SIZE][SIZE];
     Submarine playerSub;
     Submarine computerSub;
-    Aircraft x;
 
-    // query the user for where they want to put the "piece" and modify the class's variables to reflect this
     bool Poner_Pieza_Posicion(Submarine& piece){
         cout << "¿Dónde te gustaria poner tu barco? " << toLower(piece.getName()) << " (tamaño "<<piece.getLength()<<")"<<endl;
         string coordinate = toLower(requeststring());
-        cout << "Direccion? (up, down, left or right)"<<endl;
+        cout << "¿Direccion? (up, down, left or right)"<<endl;
         string direction = toLower(requeststring());
 
-        piece.Anadir_Piezas(rowCharToInt(getFirstChar(coordinate)), getFirstInt(coordinate)-1, getFirstChar(direction));
+        piece.Anadir_Piezas(Fila_char_int(getFirstChar(coordinate)), getFirstInt(coordinate)-1, getFirstChar(direction));
 
-        return isValidPlacement(playerBoard, piece);
+        return Posicion_valida(playerBoard, piece);
     }
 
 
     // actually write the "piece" to the "board"
-    void addPieceToBoard(char board[SIZE][SIZE], const Submarine& piece)
+    void Anadir_Pieza_Tablero(char board[SIZE][SIZE], const Submarine& piece)
     {
         int row = piece.getTopLeftRow();
         int column = piece.getTopLeftColumn();
@@ -365,10 +359,8 @@ private:
             }
         }
     }
-
-    // checks to see if a certain "piece" is sunk or not (i.e. true if all spots of this "piece" are hit)
-    bool isSunk(char board[SIZE][SIZE], const Submarine& piece)
-    {
+    
+    bool Esta_hundido(char board[SIZE][SIZE], const Submarine& piece){
         int row = piece.getTopLeftRow();
         int column = piece.getTopLeftColumn();
         for(int i=0; i<piece.getLength(); i++)
@@ -390,24 +382,18 @@ private:
 
         return true;
     }
-
-    // checks to see whether the input "piece" is a valid board position
-    bool isValidPlacement(char board[SIZE][SIZE], const Submarine& piece)
-    {
+    
+    bool Posicion_valida(char board[SIZE][SIZE], const Submarine& piece){
         int row = piece.getTopLeftRow();
         int column = piece.getTopLeftColumn();
 
-        // check and see if the piece is actually on the board
-        if(column<0 || (column+piece.getLength()-1>SIZE-1 && piece.isHorizontal()))
-        {
+        if(column<0 || (column+piece.getLength()-1>SIZE-1 && piece.isHorizontal())){
             return false;
         }
-        if(row<0 || (row+piece.getLength()-1>SIZE-1 && !piece.isHorizontal()))
-        {
+        if(row<0 || (row+piece.getLength()-1>SIZE-1 && !piece.isHorizontal())){
             return false;
         }
 
-        // check to see if another ship is present
         for(int i =0; i < piece.getLength(); i++)
         {
             if(board[row][column] != '*')
@@ -446,8 +432,7 @@ private:
     }
 
 
-    char getFirstChar(string temp)
-    {
+    char getFirstChar(const string & temp){
         int i=0;
         char c;
         if(temp.length()==0)
@@ -473,8 +458,7 @@ private:
         return c;
     }
 
-    int getFirstInt(string temp)
-    {
+    int getFirstInt(const string &temp){
         int i =0;
         if(temp.length()==0)
         {

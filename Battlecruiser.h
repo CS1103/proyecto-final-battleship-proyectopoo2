@@ -1,9 +1,10 @@
 //
-// Created by Juan Galvez on 2019-11-30.
+// Created by Juan Galvez on 2019-12-01.
 //
 
-#ifndef PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_SUBMARINE_H
-#define PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_SUBMARINE_H
+#ifndef PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_BATTLECRUISER_H
+#define PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_BATTLECRUISER_H
+
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -13,7 +14,7 @@
 
 using namespace std;
 
-class Submarine {
+class Battlecruiser {
 private:
     string name;
     int length;
@@ -21,13 +22,14 @@ private:
     int columnPosition;
     bool amIHorizontal;
     char boardCharacter;
-public:
-    Submarine(){
-        name = "Submarine";
-        length = 3;
-        boardCharacter = 'S';
-    }
 
+public:
+    Battlecruiser()
+    {
+        name = "Battlecruiser";
+        length = 3;
+        boardCharacter = 'B';
+    }
     void Anadir_Piezas(int row, int column, char direction)
     {
         if(direction == 'u')
@@ -91,4 +93,5 @@ public:
         return boardCharacter;
     }
 };
-#endif //PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_SUBMARINE_H
+
+#endif //PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_BATTLECRUISER_H

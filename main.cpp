@@ -23,16 +23,16 @@ int main()
         game.Anadir_Piezas_Jugador();
     }
 
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-    game.displayBoards();
+    cout << endl;
+    game.Mostrar_Tablero();
     do{
-        string playerMove = game.playerMove();
-        string computerMove = game.computerMove();
-        cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-        game.displayBoards(playerMove, computerMove);
-    }while(game.gameOver() == 0);
+        string playerMove = game.Movimiento();
+        string computerMove = game.Movimiento_PC();
+        cout << endl;
+        game.Mostrar_Tablero(playerMove, computerMove);
+    }while(game.Juego_Terminado() == 0);
 
-    int gameOver = game.gameOver();
+    int gameOver = game.Juego_Terminado();
     if(gameOver == 1)
     {
         cout << "Perdiste!!"<<endl;
