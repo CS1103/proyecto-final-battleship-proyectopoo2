@@ -1,5 +1,5 @@
 //
-// Created by Juan Galvez on 2019-11-30.
+// Created by Juan Galvez on 2019-11-25.
 //
 
 #ifndef PROYECTO_FINAL_BATTLESHIP_PROYECTOPOO2_BATTLESHIP_H
@@ -16,6 +16,7 @@
 #include "Torpedo_boat.h"
 
 using namespace std;
+
 const int TAMANO = 10; // tamaño tablero
 const char DANO = 'X'; // Daño
 const char FALLO = 'O'; // Fallo
