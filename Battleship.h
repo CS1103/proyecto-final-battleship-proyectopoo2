@@ -11,27 +11,30 @@
 #include <string>
 #include <iomanip>
 #include "Aircraft.h"
+#include "Submarine.h"
+#include "Battlecruiser.h"
+#include "Torpedo_boat.h"
 
 using namespace std;
-const int SIZE = 10; // tamaño tablero
-const char HIT = 'X'; // Daño
-const char MISS = 'O'; // Fallo
+const int TAMANO = 10; // tamaño tablero
+const char DANO = 'X'; // Daño
+const char FALLO = 'O'; // Fallo
 
 class Battleship {
 public:
 
     Battleship(){
         //JUGADOR
-        for(int i =0; i < SIZE; i++){
-            for(int j=0; j < SIZE; j++)
+        for(int i =0; i < TAMANO; i++){
+            for(int j=0; j < TAMANO; j++)
             {
                 playerBoard[i][j] = '*';
             }
         }
 
         //COMPUTADORA
-        for(int i =0; i < SIZE; i++){
-            for(int j=0; j < SIZE; j++)
+        for(int i =0; i < TAMANO; i++){
+            for(int j=0; j < TAMANO; j++)
             {
                 computerBoard[i][j] = '?';
             }
@@ -67,10 +70,10 @@ public:
             }
         }
 
-        char tempBoard[SIZE][SIZE];
-        for(int i=0; i<SIZE; i++)
+        char tempBoard[TAMANO][TAMANO];
+        for(int i=0; i<TAMANO; i++)
         {
-            for(int j=0; j<SIZE; j++)
+            for(int j=0; j<TAMANO; j++)
             {
                 tempBoard[i][j] = '*';
             }
@@ -82,8 +85,8 @@ public:
             string randomDirection;
             if(s == "") //
             {
-                randomColumn = rand()%SIZE;
-                randomRow = rand()%SIZE;
+                randomColumn = rand()%TAMANO;
+                randomRow = rand()%TAMANO;
 
                 int randomDirectionInt = rand()%4;
                 randomDirection = "";
@@ -137,7 +140,7 @@ public:
             coordinate = toLower(requeststring());
             attackRow = Fila_char_int(getFirstChar(coordinate));
             attackColumn = getFirstInt(coordinate)-1;
-        }while( (attackRow < 0 || attackRow > SIZE-1) || (attackColumn < 0 || attackColumn > SIZE-1));
+        }while( (attackRow < 0 || attackRow > TAMANO-1) || (attackColumn < 0 || attackColumn > TAMANO-1));
 
         int row = computerSub.getTopLeftRow();
         int column = computerSub.getTopLeftColumn();
@@ -145,7 +148,7 @@ public:
         {
             if(row == attackRow && column == attackColumn)
             {
-                computerBoard[attackRow][attackColumn] = HIT;
+                computerBoard[attackRow][attackColumn] = DANO;
                 if(Esta_hundido(computerBoard,computerSub))
                 {
                     string result = computerSub.getName();
@@ -170,7 +173,7 @@ public:
             }
         }
 
-        computerBoard[attackRow][attackColumn] = MISS;
+        computerBoard[attackRow][attackColumn] = FALLO;
         string result = "Fallo en: ";
         result +=toupper(getFirstChar(coordinate));
         result +=('0' + getFirstInt(coordinate));
@@ -178,8 +181,8 @@ public:
     }
 
     string Movimiento_PC(){
-        int attackRow = rand()%SIZE;
-        int attackColumn = rand()%SIZE;
+        int attackRow = rand()%TAMANO;
+        int attackColumn = rand()%TAMANO;
 
         string coordinate = "";
         coordinate+=(attackRow+'A');
@@ -191,7 +194,7 @@ public:
         {
             if(row == attackRow && column == attackColumn)
             {
-                playerBoard[attackRow][attackColumn] = HIT;
+                playerBoard[attackRow][attackColumn] = DANO;
                 if(Esta_hundido(playerBoard,playerSub))
                 {
                     string result = playerSub.getName();
@@ -214,7 +217,7 @@ public:
             }
         }
 
-        playerBoard[attackRow][attackColumn] = MISS;
+        playerBoard[attackRow][attackColumn] = FALLO;
 
         string result="Fallo en: ";
         result += coordinate;
@@ -232,10 +235,10 @@ public:
 
 
         int playerBoardHitTotal = 0;
-        for(int i=0; i<SIZE; i++){
-            for(int j=0; j<SIZE; j++)
+        for(int i=0; i<TAMANO; i++){
+            for(int j=0; j<TAMANO; j++)
             {
-                if(playerBoard[i][j] == HIT)
+                if(playerBoard[i][j] == DANO)
                 {
                     playerBoardHitTotal++;
                 }
@@ -246,10 +249,10 @@ public:
         }
 
         int computerBoardHitTotal = 0;
-        for(int i=0; i<SIZE; i++){
-            for(int j=0; j<SIZE; j++)
+        for(int i=0; i<TAMANO; i++){
+            for(int j=0; j<TAMANO; j++)
             {
-                if(computerBoard[i][j] == HIT)
+                if(computerBoard[i][j] == DANO)
                 {
                     computerBoardHitTotal++;
                 }
@@ -272,32 +275,32 @@ public:
     }
 
 
-    void Mostrar_Tablero(const string & move1, const string & move2, char leftBoard[SIZE][SIZE], char rightBoard[SIZE][SIZE]){
+    void Mostrar_Tablero(const string & move1, const string & move2, char leftBoard[TAMANO][TAMANO], char rightBoard[TAMANO][TAMANO]){
 
         cout << "  ";
-        for(int i = 0; i < SIZE; i++)
+        for(int i = 0; i < TAMANO; i++)
         {
             cout << setw(2) << i+1 << " ";
         }
         cout <<"                    ";
         cout << "   ";
-        for(int i = 0; i < SIZE; i++)
+        for(int i = 0; i < TAMANO; i++)
         {
             cout << setw(2) << i+1 << " ";
         }
         cout <<endl;
 
-        for(int i = 0; i < SIZE; i++)
+        for(int i = 0; i < TAMANO; i++)
         {
             char row = 'A'+i;
             cout << row << "  ";
-            for(int j = 0; j < SIZE; j++)
+            for(int j = 0; j < TAMANO; j++)
             {
                 cout << leftBoard[i][j] << "  ";
             }
             cout <<"                    ";
             cout << row << "  ";
-            for(int j = 0; j < SIZE; j++)
+            for(int j = 0; j < TAMANO; j++)
             {
                 cout << rightBoard[i][j] << "  ";
             }
@@ -322,8 +325,8 @@ public:
 
 
 private:
-    char playerBoard[SIZE][SIZE];
-    char computerBoard[SIZE][SIZE];
+    char playerBoard[TAMANO][TAMANO];
+    char computerBoard[TAMANO][TAMANO];
     Submarine playerSub;
     Submarine computerSub;
 
@@ -337,10 +340,8 @@ private:
 
         return Posicion_valida(playerBoard, piece);
     }
-
-
-    // actually write the "piece" to the "board"
-    void Anadir_Pieza_Tablero(char board[SIZE][SIZE], const Submarine& piece)
+    
+    void Anadir_Pieza_Tablero(char board[TAMANO][TAMANO], const Submarine& piece)
     {
         int row = piece.getTopLeftRow();
         int column = piece.getTopLeftColumn();
@@ -360,12 +361,12 @@ private:
         }
     }
     
-    bool Esta_hundido(char board[SIZE][SIZE], const Submarine& piece){
+    bool Esta_hundido(char board[TAMANO][TAMANO], const Submarine& piece){
         int row = piece.getTopLeftRow();
         int column = piece.getTopLeftColumn();
         for(int i=0; i<piece.getLength(); i++)
         {
-            if(board[row][column] != HIT)
+            if(board[row][column] != DANO)
             {
                 return false;
             }
@@ -383,14 +384,14 @@ private:
         return true;
     }
     
-    bool Posicion_valida(char board[SIZE][SIZE], const Submarine& piece){
+    bool Posicion_valida(char board[TAMANO][TAMANO], const Submarine& piece){
         int row = piece.getTopLeftRow();
         int column = piece.getTopLeftColumn();
 
-        if(column<0 || (column+piece.getLength()-1>SIZE-1 && piece.isHorizontal())){
+        if(column<0 || (column+piece.getLength()-1>TAMANO-1 && piece.isHorizontal())){
             return false;
         }
-        if(row<0 || (row+piece.getLength()-1>SIZE-1 && !piece.isHorizontal())){
+        if(row<0 || (row+piece.getLength()-1>TAMANO-1 && !piece.isHorizontal())){
             return false;
         }
 

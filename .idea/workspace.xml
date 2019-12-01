@@ -12,10 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35f7a67c-a9ff-4570-a907-fb4490914871" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Aircraft.h" beforeDir="false" afterPath="$PROJECT_DIR$/Aircraft.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Battlecruiser.h" beforeDir="false" afterPath="$PROJECT_DIR$/Battlecruiser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Submarine.h" beforeDir="false" afterPath="$PROJECT_DIR$/Submarine.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Torpedo_boat.h" beforeDir="false" afterPath="$PROJECT_DIR$/Torpedo_boat.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Battleship.h" beforeDir="false" afterPath="$PROJECT_DIR$/Battleship.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Naves.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Naves.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -36,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="148" selection-start-line="5" selection-start-column="148" selection-end-line="5" selection-end-column="148" />
+              <caret line="5" column="138" selection-start-line="5" selection-start-column="138" selection-end-line="5" selection-end-column="138" />
             </state>
           </provider>
         </entry>
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            <state relative-caret-position="284">
+              <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Battleship.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-28">
-              <caret column="2" selection-start-column="2" selection-end-column="2" />
+            <state relative-caret-position="3285">
+              <caret line="219" column="52" selection-start-line="219" selection-start-column="52" selection-end-line="219" selection-end-column="52" />
               <folding>
                 <element signature="e#168#187#0" expanded="true" />
               </folding>
@@ -65,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Submarine.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+            <state relative-caret-position="960">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="e#166#185#0" expanded="true" />
               </folding>
@@ -125,6 +125,9 @@
       <find>Submarino Hundido En</find>
       <find>Horizontal</find>
       <find>amIHorizontal</find>
+      <find>Jurg</find>
+      <find>Juego_Terminado</find>
+      <find>MISS</find>
     </findStrings>
     <replaceStrings>
       <replace>Movimiento</replace>
@@ -134,8 +137,9 @@
       <replace>Fila_char_int</replace>
       <replace>Anadir_Pieza_Tablero</replace>
       <replace>Esta_hundido</replace>
-      <replace>Posicion_valida</replace>
       <replace>Es_Horizontal</replace>
+      <replace>Posicion_valida</replace>
+      <replace>FALLO</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -149,12 +153,12 @@
         <option value="$PROJECT_DIR$/Board.cpp" />
         <option value="$PROJECT_DIR$/Board.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Battleship.h" />
         <option value="$PROJECT_DIR$/Aircraft.h" />
         <option value="$PROJECT_DIR$/Battlecruiser.h" />
         <option value="$PROJECT_DIR$/Torpedo_boat.h" />
         <option value="$PROJECT_DIR$/Submarine.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Battleship.h" />
       </list>
     </option>
   </component>
@@ -231,12 +235,12 @@
       <workItem from="1574807331307" duration="55000" />
       <workItem from="1574976654442" duration="1433000" />
       <workItem from="1574992893285" duration="35000" />
-      <workItem from="1575176218027" duration="1445000" />
+      <workItem from="1575176218027" duration="2000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7850000" />
+    <option name="totallyTimeSpent" value="8405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="173" y="29" width="1398" height="967" extended-state="0" />
@@ -247,8 +251,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32914287" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32914287" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -308,24 +312,7 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="148" selection-start-line="5" selection-start-column="148" selection-end-line="5" selection-end-column="148" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Battleship.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28">
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-          <folding>
-            <element signature="e#168#187#0" expanded="true" />
-          </folding>
+          <caret line="5" column="138" selection-start-line="5" selection-start-column="138" selection-end-line="5" selection-end-column="138" />
         </state>
       </provider>
     </entry>
@@ -359,10 +346,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Battleship.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3285">
+          <caret line="219" column="52" selection-start-line="219" selection-start-column="52" selection-end-line="219" selection-end-column="52" />
+          <folding>
+            <element signature="e#168#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Submarine.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+        <state relative-caret-position="960">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="e#166#185#0" expanded="true" />
           </folding>

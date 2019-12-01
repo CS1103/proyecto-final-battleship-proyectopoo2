@@ -20,6 +20,20 @@ string
 iomanip
 -
 
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Battlecruiser.h
+iostream
+-
+fstream
+-
+cstdlib
+-
+ctime
+-
+string
+-
+iomanip
+-
+
 /Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Battleship.h
 iostream
 -
@@ -35,8 +49,28 @@ iomanip
 -
 Aircraft.h
 /Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Aircraft.h
+Submarine.h
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Submarine.h
+Battlecruiser.h
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Battlecruiser.h
+Torpedo_boat.h
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Torpedo_boat.h
 
 /Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Submarine.h
+iostream
+-
+fstream
+-
+cstdlib
+-
+ctime
+-
+string
+-
+iomanip
+-
+
+/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Torpedo_boat.h
 iostream
 -
 fstream
