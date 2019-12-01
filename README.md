@@ -14,8 +14,11 @@ contendrán una serie de condiciones que permitan el constante y buen funcionami
    - Los jugadores serán controlados por el programa, y seguirán una serie de pasos para asi saber cual es el ganador.
      
 2. Conclusiones:
+   - No se llegó a cumplir con los requerimientos del proyecto, sin embargo se implementó un programa en el cuál el usuario
+   pueda jugar contra la máquina.
    - El proceso de implementar y abstraer un juego de la vida real a un programa nos permitió y proporcionar mejorar nuestras habilidades y formas al momento de programar.
    - Es importante tener un plan o estructura en contra de fallos que pueden pasar durante el proceso de elaboración del código.
+   
 
 
 
