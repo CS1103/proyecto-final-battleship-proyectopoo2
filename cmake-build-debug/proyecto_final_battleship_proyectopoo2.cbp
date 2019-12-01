@@ -86,6 +86,12 @@
 		<Unit filename="/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Battlecruiser.h">
 			<Option target="proyecto_final_battleship_proyectopoo2"/>
 		</Unit>
+		<Unit filename="/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Battleship.cpp">
+			<Option target="proyecto_final_battleship_proyectopoo2"/>
+		</Unit>
+		<Unit filename="/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Battleship.h">
+			<Option target="proyecto_final_battleship_proyectopoo2"/>
+		</Unit>
 		<Unit filename="/Users/Juan Galvez/Desktop/GitHub Desktop/proyecto-final-battleship-proyectopoo2/Escritura.h">
 			<Option target="proyecto_final_battleship_proyectopoo2"/>
 		</Unit>

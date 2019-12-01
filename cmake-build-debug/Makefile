@@ -123,6 +123,33 @@ proyecto_final_battleship_proyectopoo2/fast:
 	$(MAKE) -f CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/build.make CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/build
 .PHONY : proyecto_final_battleship_proyectopoo2/fast
 
+Battleship.o: Battleship.cpp.o
+
+.PHONY : Battleship.o
+
+# target to build an object file
+Battleship.cpp.o:
+	$(MAKE) -f CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/build.make CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/Battleship.cpp.o
+.PHONY : Battleship.cpp.o
+
+Battleship.i: Battleship.cpp.i
+
+.PHONY : Battleship.i
+
+# target to preprocess a source file
+Battleship.cpp.i:
+	$(MAKE) -f CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/build.make CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/Battleship.cpp.i
+.PHONY : Battleship.cpp.i
+
+Battleship.s: Battleship.cpp.s
+
+.PHONY : Battleship.s
+
+# target to generate assembly for a file
+Battleship.cpp.s:
+	$(MAKE) -f CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/build.make CMakeFiles/proyecto_final_battleship_proyectopoo2.dir/Battleship.cpp.s
+.PHONY : Battleship.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... proyecto_final_battleship_proyectopoo2"
+	@echo "... Battleship.o"
+	@echo "... Battleship.i"
+	@echo "... Battleship.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
