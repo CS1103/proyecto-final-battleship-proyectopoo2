@@ -2,7 +2,7 @@
 |-----------|------|---|
 |Juan Gálvez|201810040|[JuanGA12](https://github.com/JuanGA12)
 |Nicolas Figueroa|201810294|[NicolasFG](https://github.com/NicolasFG)
-|Guillermo Sanchez||[]()
+|Guillermo Sanchez|201720046|[guille2400](https://github.com/guille2400)
 
 
 1. Objetivos:
