@@ -19,7 +19,7 @@ private:
     int length;
     int rowPosition;
     int columnPosition;
-    bool amIHorizontal;
+    bool Es_Horizontal;
     char boardCharacter;
 public:
     Submarine(){
@@ -28,66 +28,54 @@ public:
         boardCharacter = 'S';
     }
 
-    void Anadir_Piezas(int row, int column, char direction)
-    {
-        if(direction == 'u')
-        {
+    void Anadir_Piezas(int row, int column, char direction){
+        if(direction == 'u'){
             rowPosition = row-(length-1);
             columnPosition = column;
-            amIHorizontal = false;
+            Es_Horizontal = false;
         }
-        else if(direction == 'd')
-        {
+        else if(direction == 'd'){
             rowPosition = row;
             columnPosition = column;
-            amIHorizontal = false;
+            Es_Horizontal = false;
         }
-        else if(direction == 'l')
-        {
+        else if(direction == 'l'){
             rowPosition = row;
             columnPosition = column - (length-1);
-            amIHorizontal = true;
+            Es_Horizontal = true;
         }
-        else if(direction == 'r')
-        {
+        else if(direction == 'r'){
             rowPosition = row;
             columnPosition = column;
-            amIHorizontal = true;
+            Es_Horizontal = true;
         }
-        else
-        {
+        else{
             rowPosition = -1;
             columnPosition = -1;
         }
     }
 
-    bool isHorizontal() const
-    {
-        return amIHorizontal;
+    bool isHorizontal() const{
+        return Es_Horizontal;
     }
 
-    int getTopLeftRow() const
-    {
+    int getTopLeftRow() const{
         return rowPosition;
     }
 
-    int getTopLeftColumn() const
-    {
+    int getTopLeftColumn() const{
         return columnPosition;
     }
 
-    int getLength() const
-    {
+    int getLength() const{
         return length;
     }
 
-    string getName() const
-    {
+    string getName() const{
         return name;
     }
 
-    char getBoardCharacter() const
-    {
+    char getBoardCharacter() const{
         return boardCharacter;
     }
 };

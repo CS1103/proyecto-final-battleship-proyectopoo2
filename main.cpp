@@ -18,7 +18,7 @@ int main()
 
     // Generacion tablero PC
     game.Anadir_Piezas_PC("");// implementación de lectura, pero no se usa.
-    // place your pieces
+    //6 piezas para el jugador
     for(int i=0;i<6;i++){
         game.Anadir_Piezas_Jugador();
     }

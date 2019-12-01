@@ -20,7 +20,7 @@ private:
     int length;
     int rowPosition;
     int columnPosition;
-    bool amIHorizontal;
+    bool Es_Horizontal;
     char boardCharacter;
 
 public:
@@ -30,31 +30,31 @@ public:
         boardCharacter = 'T';
     }
 
-    void setPiece(int row, int column, char direction)
+    void Anadir_Piezas(int row, int column, char direction)
     {
         if(direction == 'u')
         {
             rowPosition = row-(length-1);
             columnPosition = column;
-            amIHorizontal = false;
+            Es_Horizontal = false;
         }
         else if(direction == 'd')
         {
             rowPosition = row;
             columnPosition = column;
-            amIHorizontal = false;
+            Es_Horizontal = false;
         }
         else if(direction == 'l')
         {
             rowPosition = row;
             columnPosition = column - (length-1);
-            amIHorizontal = true;
+            Es_Horizontal = true;
         }
         else if(direction == 'r')
         {
             rowPosition = row;
             columnPosition = column;
-            amIHorizontal = true;
+            Es_Horizontal = true;
         }
         else
         {
@@ -65,7 +65,7 @@ public:
 
     bool isHorizontal() const
     {
-        return amIHorizontal;
+        return Es_Horizontal;
     }
 
     int getTopLeftRow() const
